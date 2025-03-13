@@ -1,0 +1,101 @@
+<GenelBilgi>
+
+1. XSLT Nedir?
+
+<!-- 
+1. XSLT (Extensible Stylesheet Language Transformations)
+XML verisini başka bir XML, HTML, CSV veya TXT
+formatına dönüştüren bir dildir.
+
+2.XML'in içeriğini değiştirmeden biçimlendirmek ve farklı 
+formatlara çevirmek için kullanılır.
+
+3.XSLT, bir şablon (stylesheet) dosyası olarak yazılır  ve 
+XML verisi bu şablona göre dönüştürülür.
+
+Özetle: XSLT, bir XML dosyasını alır ve içeriğini farklı bir 
+formatta çıktı olarak verir.
+
+-->
+
+2. XSLT Nasıl Çalışır?
+<!-- 
+XSLT, üç temel bileşenle çalışır:
+
+ 1. XML Dosyası → Dönüştürmek istediğimiz veri.
+ 2. XSLT Dosyası → XML verisini nasıl dönüştüreceğimizi belirler.
+ 3. XSLT İşleyici (Processor) → XML’i XSLT kurallarına göre işler ve yeni bir çıktı üretir.
+
+-->
+
+3.Basit XSLT Örneği: XML → HTML Dönüşümü
+
+
+4. XSLT Komutlari ve Kullanimi
+
+<!-- 
+1. xsl:template
+XSLT, şablon bazlı çalışır. Her XML öğesi için bir 
+şablon tanımlanır.
+
+<xsl:template match="/">
+
+
+2. xsl:value-of
+Bir XML öğesinin değerini almak için kullanılır.
+
+<xsl:value-of select="ad"/>
+Bu kod, XML’deki <ad> etiketinin içeriğini alır ve çıktıya ekler.
+
+3. xsl:for-each
+XML içindeki tüm elemanları teker teker işlemek için kullanılır.
+<xsl:for-each select="urunler/urun">
+    <tr>
+        <td><xsl:value-of select="ad"/></td>
+        <td><xsl:value-of select="fiyat"/></td>
+    </tr>
+</xsl:for-each>
+Bu kod, XML içindeki tüm <urun> elemanlarını döngüye sokar ve tabloya ekler.
+
+
+4. xsl:if
+Belirli bir koşul sağlandığında bir şeyi çalıştırmak için kullanılır.
+
+<xsl:if test="fiyat > 20000">
+    <p>Bu ürün pahalı!</p>
+</xsl:if>
+
+ Eğer ürün fiyatı 20000’den büyükse, “Bu ürün pahalı!” yazdırır.
+. xsl:choose, xsl:when, xsl:otherwise
+If-Else mantığında çalışır.
+
+xml
+Kopyala
+Düzenle
+<xsl:choose>
+    <xsl:when test="fiyat > 20000">
+        <p>Bu ürün pahalı!</p>
+    </xsl:when>
+    <xsl:otherwise>
+        <p>Bu ürün uygun fiyatlı.</p>
+    </xsl:otherwise>
+</xsl:choose>
+ Eğer fiyat 20000’den büyükse "Bu ürün pahalı!" yazdırır.
+ Aksi halde "Bu ürün uygun fiyatlı." der.
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+</GenelBilgi>
